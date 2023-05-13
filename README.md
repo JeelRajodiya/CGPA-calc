@@ -1,1 +1,1 @@
-"# CGPA-calc" 
+# CGPA-calc
