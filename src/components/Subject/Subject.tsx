@@ -31,7 +31,6 @@ function SubjectEntry({
 	React.useEffect(() => {
 		if (fieldRef.current) {
 			const width = fieldRef.current.value.length;
-			console.log(width);
 			fieldRef.current.style.width = `${Math.min(width, 15)}ch`;
 		}
 	}, [field]);
