@@ -4,13 +4,13 @@
 
 /* Define variables for light mode colors */
 :root {
-	--background-light: #000000;
-	--foreground-light: #ffffff;
+	--foreground-light: #000000;
+	--background-light: #ffffff;
 	--primary-color-light: #cb2525;
 	--secondary-color-light: #14213d;
 	--accent-color-light: #fca311;
-	--background-dark: #ffffff;
-	--foreground-dark: #1a1a1a;
+	--foreground-dark: #ffffff;
+	--background-dark: #1a1a1a;
 	--primary-color-dark: #d66c6c;
 	--secondary-color-dark: #8093b0;
 	--accent-color-dark: #ffdf6b;
@@ -39,12 +39,12 @@
 /* Use the variables in the styles */
 body {
 	background-color: var(--background-color);
-	color: var(--foreground-color);
+	color: var(--foreground);
 }
 
 .primary-button {
 	background-color: var(--primary-color);
-	color: var(--secondary-color);
+	color: var(--background);
 }
 
 .secondary-button {
