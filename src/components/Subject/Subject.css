@@ -1,8 +1,7 @@
 .subject {
 	display: flex;
 	flex-direction: row;
-	max-width: 20em;
-	width: 100%;
+	width: min(80%, 600px);
 	justify-content: space-between;
 	padding: 1em 2em;
 	border-radius: 1em;
