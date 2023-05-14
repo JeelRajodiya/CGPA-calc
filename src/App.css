@@ -4,51 +4,51 @@
 
 /* Define variables for light mode colors */
 :root {
-	--primary-color-light: #000000;
-	--secondary-color-light: #ffffff;
-	--primary-button-color-light: #cb2525;
-	--secondary-button-color-light: #14213d;
+	--background-light: #000000;
+	--foreground-light: #ffffff;
+	--primary-color-light: #cb2525;
+	--secondary-color-light: #14213d;
 	--accent-color-light: #fca311;
-	--primary-color-dark: #ffffff;
-	--secondary-color-dark: #1a1a1a;
-	--primary-button-color-dark: #d66c6c;
-	--secondary-button-color-dark: #8093b0;
+	--background-dark: #ffffff;
+	--foreground-dark: #1a1a1a;
+	--primary-color-dark: #d66c6c;
+	--secondary-color-dark: #8093b0;
 	--accent-color-dark: #ffdf6b;
 }
 
 /* Define variables that will be used for both light and dark modes */
 :root {
+	--background: var(--background-light);
+	--foreground: var(--foreground-light);
 	--primary-color: var(--primary-color-light);
 	--secondary-color: var(--secondary-color-light);
-	--primary-button-color: var(--primary-button-color-light);
-	--secondary-button-color: var(--secondary-button-color-light);
 	--accent-color: var(--accent-color-light);
 }
 
 /* Override variables for dark mode */
 @media (prefers-color-scheme: light) {
 	:root {
+		--background-color: var(--background-dark);
+		--foreground-color: var(--foreground-dark);
 		--primary-color: var(--primary-color-dark);
 		--secondary-color: var(--secondary-color-dark);
-		--primary-button-color: var(--primary-button-color-dark);
-		--secondary-button-color: var(--secondary-button-color-dark);
 		--accent-color: var(--accent-color-dark);
 	}
 }
 
 /* Use the variables in the styles */
 body {
-	background-color: var(--secondary-color);
-	color: var(--primary-color);
+	background-color: var(--background-color);
+	color: var(--foreground-color);
 }
 
 .primary-button {
-	background-color: var(--primary-button-color);
+	background-color: var(--primary-color);
 	color: var(--secondary-color);
 }
 
 .secondary-button {
-	background-color: var(--secondary-button-color);
+	background-color: var(--secondary-color);
 	color: var(--secondary-color);
 }
 
