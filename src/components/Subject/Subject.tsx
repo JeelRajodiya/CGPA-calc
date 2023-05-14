@@ -9,34 +9,47 @@ type SubjectProps = {
 };
 
 type SubjectEntryProps = {
-	name: string;
+	field: string | number;
+	setField: React.Dispatch<React.SetStateAction<any>>;
 	isFieldDisabled: boolean;
 	setIsFieldDisabled: React.Dispatch<React.SetStateAction<boolean>>;
-	icon: string;
 };
 function SubjectEntry({
-	name: field,
+	field: field,
+	setField: setField,
 	isFieldDisabled: isFieldEditable,
-	setIsFieldDisabled: setIsFieldEditable,
-	icon,
+	setIsFieldDisabled: setIsFieldDisabled,
 }: SubjectEntryProps) {
 	const fieldRef = React.useRef<HTMLInputElement>(null);
+	const handleClick = () => {
+		setIsFieldDisabled((e) => !e);
+		setTimeout(
+			() => (fieldRef.current ? fieldRef.current.focus() : null),
+			0
+		);
+	};
+	React.useEffect(() => {
+		if (fieldRef.current) {
+			const width = fieldRef.current.value.length;
+			console.log(width);
+			fieldRef.current.style.width = `${Math.min(width, 15)}ch`;
+		}
+	}, [field]);
+	const handleFocusLose = () => {
+		setIsFieldDisabled((e) => !e);
+	};
 	return (
-		<span className="subject-entry">
+		<span className="subject-entry" onBlur={handleFocusLose}>
 			<input
 				className="field"
 				disabled={isFieldEditable}
 				value={field}
 				ref={fieldRef}
+				onChange={(e) => setField(e.target.value)}
 			></input>
 			<img
-				src={icon}
-				onClick={() => {
-					setIsFieldEditable((e) => !e);
-					if (fieldRef.current) {
-						fieldRef.current.focus();
-					}
-				}}
+				src={EditIcon}
+				onClick={handleClick}
 				className="edit-icon"
 				alt="edit icon"
 			/>
@@ -57,30 +70,28 @@ export default function Subject(props: SubjectProps) {
 		<div className="subject">
 			<SubjectEntry
 				{...{
-					name,
+					field: name,
+					setField: setName,
 					isFieldDisabled: isNameDisabled,
 					setIsFieldDisabled: setIsNameDisabled,
-					icon: EditIcon,
 				}}
 			/>
-			<span className="subject-entry">
-				<div
-					className="subject-credit"
-					contentEditable={isCreditDisabled}
-				>
-					{credit}
-				</div>
-				<img src={EditIcon} className="edit-icon" alt="My Icon" />
-			</span>
-			<span className="subject-entry">
-				<div
-					className="subject-grade"
-					contentEditable={isGradeDisabled}
-				>
-					{grade}
-				</div>
-				<img src={EditIcon} className="edit-icon" alt="My Icon" />
-			</span>
+			<SubjectEntry
+				{...{
+					field: credit,
+					setField: setCredit,
+					isFieldDisabled: isCreditDisabled,
+					setIsFieldDisabled: setIsCreditDisabled,
+				}}
+			/>
+			<SubjectEntry
+				{...{
+					field: grade,
+					setField: setGrade,
+					isFieldDisabled: isGradeDisabled,
+					setIsFieldDisabled: setIsGradeDisabled,
+				}}
+			/>
 		</div>
 	);
 }
