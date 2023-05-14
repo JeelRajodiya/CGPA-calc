@@ -1,5 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+/* ------------------------NEW------------------------------------------- */
+
+/* Define variables for light mode colors */
+:root {
+	--primary-color-light: #000000;
+	--secondary-color-light: #e5e5e5;
+	--primary-button-color-light: #cb2525;
+	--secondary-button-color-light: #14213d;
+	--accent-color-light: #fca311;
+  }
+  
+  /* Define variables for dark mode colors */
+  :root {
+	--primary-color-dark: #ffffff;
+	--secondary-color-dark: #1a1a1a;
+	--primary-button-color-dark: #d66c6c;
+	--secondary-button-color-dark: #8093b0;
+	--accent-color-dark: #ffdf6b;
+  }
+  
+  /* Define variables that will be used for both light and dark modes */
+  :root {
+	--primary-color: var(--primary-color-light);
+	--secondary-color: var(--secondary-color-light);
+	--primary-button-color: var(--primary-button-color-light);
+	--secondary-button-color: var(--secondary-button-color-light);
+	--accent-color: var(--accent-color-light);
+  }
+  
+  /* Override variables for dark mode */
+  @media (prefers-color-scheme: dark) {
+	:root {
+	  --primary-color: var(--primary-color-dark);
+	  --secondary-color: var(--secondary-color-dark);
+	  --primary-button-color: var(--primary-button-color-dark);
+	  --secondary-button-color: var(--secondary-button-color-dark);
+	  --accent-color: var(--accent-color-dark);
+	}
+  }
+  
+  /* Use the variables in the styles */
+  body {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+  }
+  
+  .primary-button {
+	background-color: var(--primary-button-color);
+	color: var(--secondary-color);
+  }
+  
+  .secondary-button {
+	background-color: var(--secondary-button-color);
+	color: var(--secondary-color);
+  }
+  
+  .accent {
+	color: var(--accent-color);
+  }
+  
+/* ------------------------NEW------------------------------------------- */
+
+
 .title {
 }
 body {
