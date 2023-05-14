@@ -5,7 +5,7 @@
 /* Define variables for light mode colors */
 :root {
 	--primary-color-light: #000000;
-	--secondary-color-light: #e5e5e5;
+	--secondary-color-light: #ffffff;
 	--primary-button-color-light: #cb2525;
 	--secondary-button-color-light: #14213d;
 	--accent-color-light: #fca311;
@@ -26,7 +26,7 @@
 }
 
 /* Override variables for dark mode */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 	:root {
 		--primary-color: var(--primary-color-dark);
 		--secondary-color: var(--secondary-color-dark);
