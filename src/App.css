@@ -54,7 +54,11 @@ body {
 
 .accent {
 	/* background-color: var(--accent-color); */
-	background-image: linear-gradient(to bottom right, var(--accent-color), var(--primary-color));
+	background-image: linear-gradient(
+		to bottom right,
+		var(--accent-color),
+		red
+	);
 	color: white;
 }
 
@@ -69,4 +73,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.bubble-element {
+	display: flex;
+	flex-direction: row;
+	width: min(80%, 600px);
+	padding: 1em 2em;
 }

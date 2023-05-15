@@ -1,0 +1,10 @@
+.add-button {
+	border-radius: 1em;
+	align-items: center;
+	justify-content: center;
+	transition: transform 100ms ease-out, background-color 100ms ease-out;
+}
+
+.add-button:active {
+	transform: scale(0.97);
+}
