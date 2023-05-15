@@ -9,7 +9,9 @@
 .add-button.bubble-element {
 	padding: 0.5em 2em;
 	border-radius: 10px;
-	margin: 10px;
+	margin: 10px;	
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 .add-button:active {
 	transform: scale(0.97);
