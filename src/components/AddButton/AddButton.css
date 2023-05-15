@@ -2,11 +2,14 @@
 	border-radius: 1em;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
+
 	transition: transform 100ms ease-out, background-color 100ms ease-out;
-	padding: 0em auto;
 }
 .add-button.bubble-element {
 	padding: 0.5em 2em;
+	border-radius: 10px;
+	margin: 10px;
 }
 .add-button:active {
 	transform: scale(0.97);
@@ -15,6 +18,9 @@
 	height: 30px;
 	width: 30px;
 	margin: 0 5px;
-	cursor: pointer;
 	filter: invert(100%);
+	transition: transform 200ms ease-out;
+}
+.add-button:hover > .add-icon {
+	transform: rotate(90deg);
 }
