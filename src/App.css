@@ -53,7 +53,8 @@ body {
 }
 
 .accent {
-	background-color: var(--accent-color);
+	/* background-color: var(--accent-color); */
+	background-image: linear-gradient(to bottom right, var(--accent-color), var(--primary-color));
 	color: white;
 }
 
