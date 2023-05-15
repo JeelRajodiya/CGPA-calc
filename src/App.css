@@ -54,20 +54,41 @@ body {
 
 .accent {
 	/* background-color: var(--accent-color); */
-	background-image: linear-gradient(to bottom right, var(--accent-color), red);
+	background-image: linear-gradient(
+		to bottom right,
+		var(--accent-color),
+		red
+	);
 	color: white;
 }
 
 /* ------------------------NEW------------------------------------------- */
 
 .title {
-    font-size: 3rem;
-    /* Set the background gradient to match .accent */
-    background-image: linear-gradient(to bottom right, var(--accent-color), red);
-    /* Use the background as a mask for the text */
-    -webkit-background-clip: text;
-    /* Set the text color to the gradient color */
-    -webkit-text-fill-color: transparent;
+	font-size: 3rem;
+	/* Set the background gradient to match .accent */
+	background-image: linear-gradient(
+		to bottom right,
+		var(--accent-color),
+		red
+	);
+	/* Use the background as a mask for the text */
+	-webkit-background-clip: text;
+	/* Set the text color to the gradient color */
+	-webkit-text-fill-color: transparent;
+
+	/* Animate the gradient */
+	animation: enchantment-glint 1s linear infinite alternate;
+	animation-delay: 0.5s;
+}
+
+@keyframes enchantment-glint {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
 }
 
 body {
