@@ -61,7 +61,15 @@ body {
 /* ------------------------NEW------------------------------------------- */
 
 .title {
+    font-size: 3rem;
+    /* Set the background gradient to match .accent */
+    background-image: linear-gradient(to bottom right, var(--accent-color), red);
+    /* Use the background as a mask for the text */
+    -webkit-background-clip: text;
+    /* Set the text color to the gradient color */
+    -webkit-text-fill-color: transparent;
 }
+
 body {
 	font-family: "Lato", sans-serif;
 }
