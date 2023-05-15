@@ -59,17 +59,18 @@ body {
 	background-image: linear-gradient(
 		to bottom right,
 		var(--accent-color),
-		red
+		red,
+		orange,
+		yellow
 	);
 	-webkit-background-clip: text;
 	background-clip: transparent;
 	-webkit-text-fill-color: transparent;
 
-	animation: enchantment-glint 2s linear infinite alternate;
-	background-size: 200% 200%;
+	animation: gradient 3s linear infinite;
+	background-size: 400% 400%;
 }
-
-@keyframes enchantment-glint {
+@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
