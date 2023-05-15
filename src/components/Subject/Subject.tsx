@@ -6,12 +6,15 @@ type SubjectProps = {
 	name: string;
 	credit: number;
 	grade: number;
+	onChange: (newName: string, newCredits: number, newGpa: number) => void;
 };
 
 type SubjectEntryProps = {
 	field: string | number;
 	setField: React.Dispatch<React.SetStateAction<any>>;
 	isFieldDisabled: boolean;
+	onChange: (newField: any) => void;
+
 	setIsFieldDisabled: React.Dispatch<React.SetStateAction<boolean>>;
 };
 function SubjectEntry({
@@ -19,6 +22,7 @@ function SubjectEntry({
 	setField: setField,
 	isFieldDisabled: isFieldEditable,
 	setIsFieldDisabled: setIsFieldDisabled,
+	onChange: onChange,
 }: SubjectEntryProps) {
 	const fieldRef = React.useRef<HTMLInputElement>(null);
 	const handleClick = () => {
@@ -44,7 +48,15 @@ function SubjectEntry({
 				disabled={isFieldEditable}
 				value={field}
 				ref={fieldRef}
-				onChange={(e) => setField(e.target.value)}
+				onChange={(e) => {
+					setField(e.target.value);
+					onChange(e.target.value);
+					setTimeout(
+						() =>
+							fieldRef.current ? fieldRef.current.focus() : null,
+						0
+					);
+				}}
 			></input>
 			<img
 				src={EditIcon}
@@ -74,6 +86,9 @@ export default function Subject(props: SubjectProps) {
 					isFieldDisabled: isNameDisabled,
 					setIsFieldDisabled: setIsNameDisabled,
 				}}
+				onChange={(newName) => {
+					props.onChange(newName, credit, grade);
+				}}
 			/>
 			<SubjectEntry
 				{...{
@@ -82,6 +97,9 @@ export default function Subject(props: SubjectProps) {
 					isFieldDisabled: isCreditDisabled,
 					setIsFieldDisabled: setIsCreditDisabled,
 				}}
+				onChange={(newCredit) => {
+					props.onChange(name, newCredit, grade);
+				}}
 			/>
 			<SubjectEntry
 				{...{
@@ -89,6 +107,9 @@ export default function Subject(props: SubjectProps) {
 					setField: setGrade,
 					isFieldDisabled: isGradeDisabled,
 					setIsFieldDisabled: setIsGradeDisabled,
+				}}
+				onChange={(newGrade) => {
+					props.onChange(name, credit, newGrade);
 				}}
 			/>
 		</div>
