@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-/* Test for css branch */
-/* ------------------------NEW------------------------------------------- */
-
-/* Define variables for light mode colors */
 :root {
 	--foreground-light: #000000;
 	--background-light: #ffffff;
@@ -16,7 +12,6 @@
 	--accent-color-dark: #ffdf6b;
 }
 
-/* Define variables that will be used for both light and dark modes */
 :root {
 	--background: var(--background-light);
 	--foreground: var(--foreground-light);
@@ -25,7 +20,6 @@
 	--accent-color: var(--accent-color-light);
 }
 
-/* Override variables for dark mode */
 @media (prefers-color-scheme: light) {
 	:root {
 		--background-color: var(--background-dark);
@@ -36,7 +30,6 @@
 	}
 }
 
-/* Use the variables in the styles */
 body {
 	background-color: var(--background-color);
 	color: var(--foreground);
@@ -53,36 +46,40 @@ body {
 }
 
 .accent {
-	/* background-color: var(--accent-color); */
-	background-image: linear-gradient(to bottom right, var(--accent-color), red);
+	background-image: linear-gradient(
+		to bottom right,
+		var(--accent-color),
+		red
+	);
 	color: white;
 }
 
-/* ------------------------NEW------------------------------------------- */
 .title {
 	font-size: 3rem;
-	/* Set the background gradient to match .accent */
-	background-image: linear-gradient(to bottom right, var(--accent-color), red);
-	/* Use the background as a mask for the text */
+	background-image: linear-gradient(
+		to bottom right,
+		var(--accent-color),
+		red
+	);
 	-webkit-background-clip: text;
-	/* Set the text color to the gradient color */
+	background-clip: transparent;
 	-webkit-text-fill-color: transparent;
-  
-	/* Animate the gradient */
-	animation: enchantment-glint 1s linear infinite alternate;
-	animation-delay: 0.5s;
-  }
-  
-  @keyframes enchantment-glint {
+
+	animation: enchantment-glint 2s linear infinite alternate;
+	background-size: 200% 200%;
+}
+
+@keyframes enchantment-glint {
 	0% {
-	  background-position: 0 0;
+		background-position: 0% 50%;
 	}
-  
+	50% {
+		background-position: 100% 50%;
+	}
 	100% {
-	  background-position: 100% 0;
+		background-position: 0% 50%;
 	}
-  }
-  
+}
 
 body {
 	font-family: "Lato", sans-serif;
