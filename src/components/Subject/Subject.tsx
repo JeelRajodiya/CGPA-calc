@@ -35,7 +35,7 @@ function SubjectEntry({
 	React.useEffect(() => {
 		if (fieldRef.current) {
 			const width = fieldRef.current.value.length;
-			fieldRef.current.style.width = `${Math.min(width + 2, 15)}ch`;
+			fieldRef.current.style.width = `${Math.min(width + 1, 15)}ch`;
 		}
 	}, [field]);
 	const handleFocusLose = () => {
