@@ -44,16 +44,17 @@ body {
 
 .primary-button {
 	background-color: var(--primary-color);
-	color: var(--background);
+	color: white;
 }
 
 .secondary-button {
 	background-color: var(--secondary-color);
-	color: var(--secondary-color);
+	color: white;
 }
 
 .accent {
-	color: var(--accent-color);
+	background-color: var(--accent-color);
+	color: white;
 }
 
 /* ------------------------NEW------------------------------------------- */

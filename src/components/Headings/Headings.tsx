@@ -3,7 +3,7 @@ import "./Headings.css";
 
 export default function Heading() {
 	return (
-		<div className="headings primary-button">
+		<div className="headings accent">
 			<span>Subject</span>
 			<span>Credit</span>
 			<span>Grade</span>
