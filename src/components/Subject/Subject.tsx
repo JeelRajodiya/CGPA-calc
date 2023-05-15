@@ -66,7 +66,7 @@ export default function Subject(props: SubjectProps) {
 	const [isGradeDisabled, setIsGradeDisabled] = React.useState(true);
 
 	return (
-		<div className="subject">
+		<div className="subject bubble-element">
 			<SubjectEntry
 				{...{
 					field: name,

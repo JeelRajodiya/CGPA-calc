@@ -54,41 +54,20 @@ body {
 
 .accent {
 	/* background-color: var(--accent-color); */
-	background-image: linear-gradient(
-		to bottom right,
-		var(--accent-color),
-		red
-	);
+	background-image: linear-gradient(to bottom right, var(--accent-color), red);
 	color: white;
 }
 
 /* ------------------------NEW------------------------------------------- */
 
 .title {
-	font-size: 3rem;
-	/* Set the background gradient to match .accent */
-	background-image: linear-gradient(
-		to bottom right,
-		var(--accent-color),
-		red
-	);
-	/* Use the background as a mask for the text */
-	-webkit-background-clip: text;
-	/* Set the text color to the gradient color */
-	-webkit-text-fill-color: transparent;
-
-	/* Animate the gradient */
-	animation: enchantment-glint 1s linear infinite alternate;
-	animation-delay: 0.5s;
-}
-
-@keyframes enchantment-glint {
-	0% {
-		background-position: 0 0;
-	}
-	100% {
-		background-position: 100% 0;
-	}
+    font-size: 3rem;
+    /* Set the background gradient to match .accent */
+    background-image: linear-gradient(to bottom right, var(--accent-color), red);
+    /* Use the background as a mask for the text */
+    -webkit-background-clip: text;
+    /* Set the text color to the gradient color */
+    -webkit-text-fill-color: transparent;
 }
 
 body {
@@ -98,4 +77,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.bubble-element {
+	display: flex;
+	flex-direction: row;
+	width: min(80%, 600px);
+	padding: 1em 2em;
 }

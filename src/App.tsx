@@ -2,6 +2,7 @@ import * as React from "react";
 import "./App.css";
 import Subject from "./components/Subject/Subject";
 import Headings from "./components/Headings/Headings";
+import AddButton from "./components/AddButton/AddButton";
 export default function App() {
 	return (
 		<div className="container">
@@ -9,6 +10,7 @@ export default function App() {
 			<Headings />
 			<Subject name="Math" credit={3} grade={3.3} />
 			<Subject name="Math2" credit={3} grade={3.3} />
+			<AddButton />
 		</div>
 	);
 }
