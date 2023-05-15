@@ -17,6 +17,7 @@ type SubjectEntryProps = {
 
 	setIsFieldDisabled: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
 function SubjectEntry({
 	field: field,
 	setField: setField,
