@@ -4,14 +4,26 @@ import "./App.css";
 import Subject from "./components/Subject/Subject";
 import Headings from "./components/Headings/Headings";
 import AddButton from "./components/AddButton/AddButton";
+import CGPAViewer from "./components/CGPAViewer/CGPAViewer";
+function fetchSubjectsFromStorage() {
+	let subjects = localStorage.getItem("subjects");
+	if (subjects) {
+		return JSON.parse(subjects);
+	}
+	return [];
+}
 export default function App() {
 	const [subjects, setSubjects] = useState<(string | number)[][]>([]);
-	React.useEffect(() => {
-		let newSubjects = [...subjects, ["MAT2810", 3, 4]];
+	const addNewSubject = () => {
+		let newSubjects = [...subjects, ["MAT281", 3, 4]];
 		setSubjects(newSubjects);
+	};
+	React.useEffect(() => {
+		const subjects = fetchSubjectsFromStorage();
+		setSubjects(subjects);
 	}, []);
 	React.useEffect(() => {
-		console.log(subjects);
+		localStorage.setItem("subjects", JSON.stringify(subjects));
 	}, [subjects]);
 
 	return (
@@ -32,7 +44,8 @@ export default function App() {
 					}}
 				/>
 			))}
-			<AddButton />
+			<AddButton addNewSubject={addNewSubject} />
+			<CGPAViewer subjects={subjects} />
 		</div>
 	);
 }
