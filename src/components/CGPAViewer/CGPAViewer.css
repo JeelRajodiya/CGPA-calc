@@ -25,4 +25,5 @@
 }
 .add-button:hover > .add-icon {
 	transform: rotate(90deg);
+	/* color: white; */
 }
